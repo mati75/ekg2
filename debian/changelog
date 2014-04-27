@@ -8,6 +8,8 @@ ekg2 (1:0.4~pre+20120506.1-5) UNRELEASED; urgency=medium
     - Update ekg2-core description. (Closes: #621852)
   * debian/compat: Bump to 9. 
   * Fix FTBFS on ppc64el (Closes: #744567, LP: #1251887)
+  * debian/rules:
+    - Remove all .la files.
 
  -- Mateusz Łukasik <mati75@linuxmint.pl>  Sun, 27 Apr 2014 15:36:53 +0200
 

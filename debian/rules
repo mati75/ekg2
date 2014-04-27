@@ -75,6 +75,7 @@ override_dh_strip:
 
 override_dh_auto_install:
 	perl_install_args="DESTDIR=$(CURDIR)/debian/tmp INSTALLDIRS=vendor" $(MAKE) install DESTDIR=$(CURDIR)/debian/tmp
+	find debian/tmp/usr/lib*/ -name "*.la" -delete
 
 override_dh_installdocs:
 	dh_installdocs --link-doc=ekg2-core -pekg2 -pekg2-dbg -pekg2-gnupg -pekg2-jabber \
