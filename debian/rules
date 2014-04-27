@@ -67,6 +67,7 @@ override_dh_auto_clean:
 	cd docs && sh generate-ekg2book.sh en clean
 	rm -rf docs/doxygen
 	rm -f docs/ekg2.1
+	dh_autoreconf_clean
 	dh_auto_clean
 
 override_dh_strip:
