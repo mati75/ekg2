@@ -33,7 +33,7 @@ Description: instant messenger and IRC client for UNIX systems - main program
  has a plugin-based structure, and supports multiple protocols, currently
  Jabber, ICQ, Gadu-Gadu, IRC, RivChat, PolChat, NNTP and RSS.
  .
- This package contains the main program those plugins which do not have
+ This package contains the main program and plugins which do not have
  large dependencies. It does NOT contain the text or graphical user interface
  plugins.
 

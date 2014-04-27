@@ -5,7 +5,8 @@ ekg2 (1:0.4~pre+20120506.1-5) UNRELEASED; urgency=medium
     - Update VCS fields.
     - Bump minimal debhelper version.
     - Bump Standards-Version.
-  * debian/compat: Bump to 9.
+    - Update ekg2-core description. (Closes: #621852)
+  * debian/compat: Bump to 9. 
 
  -- Mateusz Łukasik <mati75@linuxmint.pl>  Sun, 27 Apr 2014 15:36:53 +0200
 
