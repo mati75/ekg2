@@ -20,8 +20,8 @@ Build-Conflicts: autoconf2.13, automake1.4
 Standards-Version: 3.9.1
 XS-Python-Version: current
 Homepage: http://ekg2.org/
-Vcs-Git: git://github.com/porridge/ekg2.git
-Vcs-Browser: https://github.com/porridge/ekg2
+Vcs-Git: git://github.com/mati75/ekg2.git
+Vcs-Browser: https://github.com/mati75/ekg2
 
 Package: ekg2-core
 Architecture: any
