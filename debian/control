@@ -17,7 +17,7 @@ Build-Depends: debhelper (>= 9), dh-autoreconf,
 # Documentation
  xsltproc, docbook-xsl, doxygen
 Build-Conflicts: autoconf2.13, automake1.4
-Standards-Version: 3.9.1
+Standards-Version: 3.9.5
 XS-Python-Version: current
 Homepage: http://ekg2.org/
 Vcs-Git: git://github.com/mati75/ekg2.git
