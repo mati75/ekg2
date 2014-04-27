@@ -2,7 +2,7 @@ Source: ekg2
 Section: net
 Priority: optional
 Maintainer: Mateusz Łukasik <mati75@linuxmint.pl>
-Build-Depends: debhelper (>= 7.0.50~), dh-autoreconf,
+Build-Depends: debhelper (>= 9), dh-autoreconf,
  autoconf, automake (>= 1.14~), libtool, autopoint | gettext (<= 0.17-9), gettext,
 # UI
  libncursesw5-dev, libgpmg1-dev, libaspell-dev, libgtk2.0-dev,
