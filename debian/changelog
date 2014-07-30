@@ -1,4 +1,4 @@
-ekg2 (1:0.4~pre+20120506.1-5) UNRELEASED; urgency=medium
+ekg2 (1:0.4~pre+20120506.1-7) UNRELEASED; urgency=medium
 
   * New maintainer. (Closes: #745311)
   * debian/control:
@@ -6,12 +6,30 @@ ekg2 (1:0.4~pre+20120506.1-5) UNRELEASED; urgency=medium
     - Bump minimal debhelper version.
     - Bump Standards-Version.
     - Update ekg2-core description. (Closes: #621852)
+    - Use libgpmg1-dev on Linux arches.
   * debian/compat: Bump to 9. 
   * Fix FTBFS on ppc64el (Closes: #744567, LP: #1251887)
   * debian/rules:
-    - Remove all .la files.
+    - Remove all .la files. 
 
  -- Mateusz Łukasik <mati75@linuxmint.pl>  Sun, 27 Apr 2014 15:36:53 +0200
+
+ekg2 (1:0.4~pre+20120506.1-6) unstable; urgency=medium
+
+  * QA upload.
+  * Fix "hardcodes /usr/lib/perl5":
+    use a debian/ekg2-scripting-perl.install.in in file where a variable gets
+    replaced from debian/rules at build time with the value of
+    $Config{vendorarch}
+    (Closes: #752470)
+
+ -- gregor herrmann <gregoa@debian.org>  Tue, 29 Jul 2014 19:23:21 +0200
+
+ekg2 (1:0.4~pre+20120506.1-5) unstable; urgency=low
+
+  * Orphaning.
+
+ -- Marcin Owsiany <porridge@debian.org>  Tue, 08 Jul 2014 07:42:20 +0200
 
 ekg2 (1:0.4~pre+20120506.1-4) unstable; urgency=medium
 

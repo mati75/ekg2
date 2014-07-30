@@ -6,6 +6,8 @@
 # we specify an explicit automake version
 export AUTOMAKE=automake-1.14
 
+ARCHLIB := $(shell perl -MConfig -e 'print substr($$Config{vendorarch}, 1)')
+
 -include /usr/share/topgit/tg2quilt.mk
 /usr/share/topgit/tg2quilt.mk:
 
@@ -67,6 +69,7 @@ override_dh_auto_clean:
 	cd docs && sh generate-ekg2book.sh en clean
 	rm -rf docs/doxygen
 	rm -f docs/ekg2.1
+	rm -f debian/ekg2-scripting-perl.install
 	dh_autoreconf_clean
 	dh_auto_clean
 
@@ -75,7 +78,18 @@ override_dh_strip:
 
 override_dh_auto_install:
 	perl_install_args="DESTDIR=$(CURDIR)/debian/tmp INSTALLDIRS=vendor" $(MAKE) install DESTDIR=$(CURDIR)/debian/tmp
+#	dh_install --list-missing
 	find debian/tmp/usr/lib*/ -name "*.la" -delete
+
+override_dh_install:
+	sed -e 's,@ARCHLIB@,$(ARCHLIB),g' $(CURDIR)/debian/ekg2-scripting-perl.install.in > $(CURDIR)/debian/ekg2-scripting-perl.install
+	dh_install
+
+
+
+override_dh_install:
+	sed -e 's,@ARCHLIB@,$(ARCHLIB),g' $(CURDIR)/debian/ekg2-scripting-perl.install.in > $(CURDIR)/debian/ekg2-scripting-perl.install
+	dh_install
 
 override_dh_installdocs:
 	dh_installdocs --link-doc=ekg2-core -pekg2 -pekg2-dbg -pekg2-gnupg -pekg2-jabber \

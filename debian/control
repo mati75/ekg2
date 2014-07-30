@@ -5,7 +5,7 @@ Maintainer: Mateusz Łukasik <mati75@linuxmint.pl>
 Build-Depends: debhelper (>= 9), dh-autoreconf,
  autoconf, automake (>= 1.14~), libtool, autopoint | gettext (<= 0.17-9), gettext,
 # UI
- libncursesw5-dev, libgpmg1-dev, libaspell-dev, libgtk2.0-dev,
+ libncursesw5-dev, libgpmg1-dev [linux-any], libaspell-dev, libgtk2.0-dev,
 # scripting
  python, python-dev, libperl-dev,
 # Protocols

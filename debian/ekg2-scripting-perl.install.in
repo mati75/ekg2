@@ -1,3 +1,4 @@
-usr/lib/perl5
+@ARCHLIB@
 usr/lib/ekg2/plugins/perl.so
+usr/lib/ekg2/plugins/perl.la
 usr/share/ekg2/scripts/*.pl
