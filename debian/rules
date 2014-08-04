@@ -110,11 +110,8 @@ override_dh_install:
 	sed -e 's,@ARCHLIB@,$(ARCHLIB),g' $(CURDIR)/debian/ekg2-scripting-perl.install.in > $(CURDIR)/debian/ekg2-scripting-perl.install
 	dh_install
 
-
-
-override_dh_install:
-	sed -e 's,@ARCHLIB@,$(ARCHLIB),g' $(CURDIR)/debian/ekg2-scripting-perl.install.in > $(CURDIR)/debian/ekg2-scripting-perl.install
-	dh_install
+override_dh_installchangelogs:
+	dh_installchangelogs -k debian/Changelog.upstream
 
 override_dh_installdocs:
 	dh_installdocs --link-doc=ekg2-core -pekg2 -pekg2-dbg -pekg2-gnupg -pekg2-jabber \

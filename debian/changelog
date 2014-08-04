@@ -1,4 +1,4 @@
-ekg2 (1:0.4~pre+20120506.1-8) UNRELEASED; urgency=medium
+ekg2 (1:0.4~pre+20120506.1-8) unstable; urgency=medium
 
   * New maintainer. (Closes: #745311)
   * debian/control:
@@ -8,9 +8,13 @@ ekg2 (1:0.4~pre+20120506.1-8) UNRELEASED; urgency=medium
   * Fix FTBFS on ppc64el (Closes: #744567, LP: #1251887)
   * debian/rules:
     - Remove all .la files. 
+    - Fix FTBFS on kfreebsd-any and hurd-i386.
   * Update debian/copyright.
+  * Add upstream changelog from git commits.
+  * Add lintian-override for ekg2-core and ekg2-api-docs to ignore duplicate
+    files in different languages.
 
- -- Mateusz Łukasik <mati75@linuxmint.pl>  Sun, 27 Apr 2014 15:36:53 +0200
+ -- Mateusz Łukasik <mati75@linuxmint.pl>  Mon, 04 Aug 2014 20:53:44 +0200
 
 ekg2 (1:0.4~pre+20120506.1-7) experimental; urgency=medium
 

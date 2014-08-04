@@ -104,7 +104,7 @@ Copyright: 2000-2001, Richard Hughes, Roland Rabien, Tristan Van de Vreede
 License: GPL-2+
 
 Files: plugins/sniff/sniff_dns.h
-Copyright: Multiple, informations behind                                                  
+Copyright: Multiple, more information behind                                                  
 License: permissive
   symbols: digits[], special(), printable(), ns_name_unpack(), ns_name_ntop(), ns_name_uncompress()
 	copied from glibc resolv/res_data.c
