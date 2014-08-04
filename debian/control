@@ -11,7 +11,7 @@ Build-Depends: debhelper (>= 9), dh-autoreconf,
 # Protocols
  libgadu-dev, libexpat1-dev,
 # Encryption
- libssl-dev, libgnutls-dev, libgpgme11-dev,
+ libssl-dev, libgnutls28-dev, libgpgme11-dev,
 # Other
  zlib1g-dev, libsqlite3-dev, libglib2.0-dev,
 # Documentation

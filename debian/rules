@@ -6,6 +6,9 @@
 # we specify an explicit automake version
 export AUTOMAKE=automake-1.14
 
+DEB_BUILD_ARCH_OS := $(shell dpkg-architecture -qDEB_BUILD_ARCH_OS)
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+
 ARCHLIB := $(shell perl -MConfig -e 'print substr($$Config{vendorarch}, 1)')
 
 -include /usr/share/topgit/tg2quilt.mk
@@ -15,8 +18,10 @@ ARCHLIB := $(shell perl -MConfig -e 'print substr($$Config{vendorarch}, 1)')
 	dh $@ --with autoreconf,python2 --parallel
 
 # Remember to update README.Debian as well...
-override_dh_auto_configure:
-	dh_auto_configure -- \
+
+#Configure flags
+
+common_configure_flags := \
 		--enable-autoresponder \
 		--enable-gg \
 		--enable-gpg \
@@ -41,7 +46,6 @@ override_dh_auto_configure:
 		--with-expat \
 		--with-gnutls \
 		--with-gpgme \
-		--with-gpm \
 		--with-gtk \
 		--with-libgadu \
 		--with-ncurses \
@@ -49,7 +53,28 @@ override_dh_auto_configure:
 		--with-perl \
 		--with-python \
 		--with-sqlite3 \
-		--with-zlib
+		--with-zlib \
+		--libdir=\$${prefix}/lib
+
+ifeq ($(DEB_BUILD_ARCH_OS), linux)
+override_dh_auto_configure:
+		dh_auto_configure --verbose -- \
+			$(common_configure_flags) \
+			--with-gpm
+endif
+ifeq ($(DEB_BUILD_ARCH_OS), kfreebsd)
+override_dh_auto_configure:
+		dh_auto_configure --verbose -- \
+			$(common_configure_flags) \
+			--without-gpm
+endif
+ifeq ($(DEB_BUILD_ARCH_OS), hurd)
+override_dh_auto_configure:
+		dh_auto_configure --verbose -- \
+			$(common_configure_flags) \
+			--without-gpm
+endif
+
 # Reasons for disabling some features are in README.Debian
 # Remember to update README.Debian as well...
 
