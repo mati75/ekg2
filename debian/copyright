@@ -1,195 +1,120 @@
-This package was debianized by Marcin Owsiany <porridge@debian.org> on
-Sat, 21 Aug 2004 19:18:18 +0200
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: ekg2
+Source: http://pl.ekg2.org/download.php
 
-It was downloaded from http://ekg2.org/
+Files: *
+Copyright: 2001-2008, Adam Czerwiski <acze@acze.net>
+                     Adam Mikuta <adamm@ekg2.org>
+                     Adam Osuchowski <adwol@polsl.gliwice.pl>
+                     Adam Wysocki <gophi@ekg.chmurka.net>
+                     Dawid Jarosz <dawjar@poczta.onet.pl>
+                     Jakub 'ABUKAJ' Kowalski
+                     Jakub Zawadzki <darkjames@darkjames.ath.cx>
+                     Kuba Kowalski <qbq@kofeina.net>
+                     Leszek Krupiński <leafnode@pld-linux.org>
+                     Maciej Pietrzak <maciej@hell.org.pl>
+                     Michal 'GiM' Spadlinski  < gim913 a@t gmail d.o.t com>
+                     Michal 'peres' Gorny
+                     Paweł Maziarz <drg@go2.pl>
+                     Piotr Domagalski <szalik@szalik.net>
+                     Piotr Kupisiewicz <deletek@ekg2.org>
+                     Piotr Pawłow and other libtlen developers (http://libtlen.sourceforge.net/index.php theme=teary&page=authors)
+                     Piotr Wysocki <wysek@linux.bydg.org>
+                     Robert J. Woźny <speedy@ziew.org>
+                     Tomasz Torcz <zdzichu@ekg2.org>
+                     Wojciech Bojdoł <wojboj@htc.net.pl>
+                     Wojtek Kaniewski <wojtekka@irc.pl>
+License: GPL-2+ with OpenSSL exception
 
-EKG2 - Eksperymentalny Klient Gadu-Gadu
+Files: debian/*
+Copyright: 2004-2014 Marcin Owsiany <porridge@debian.org>
+           2014, Mateusz Łukasik <mati75@linuxmint.pl>
+License: GPL-2+
 
-Most of the code is (C) Copyright 2001-2008, by its Authors
-                            Adam Czerwiski <acze@acze.net>
-                            Adam Mikuta <adamm@ekg2.org>
-                            Adam Osuchowski <adwol@polsl.gliwice.pl>
-                            Adam Wysocki <gophi@ekg.chmurka.net>
-                            Dawid Jarosz <dawjar@poczta.onet.pl>
-                            Jakub 'ABUKAJ' Kowalski
-                            Jakub Zawadzki <darkjames@darkjames.ath.cx>
-                            Kuba Kowalski <qbq@kofeina.net>
-                            Leszek Krupiński <leafnode@pld-linux.org>
-                            Maciej Pietrzak <maciej@hell.org.pl>
-                            Michal 'GiM' Spadlinski  < gim913 a@t gmail d.o.t com>
-                            Michal 'peres' Gorny
-                            Paweł Maziarz <drg@go2.pl>
-                            Piotr Domagalski <szalik@szalik.net>
-                            Piotr Kupisiewicz <deletek@ekg2.org>
-                            Piotr Pawłow and other libtlen developers (http://libtlen.sourceforge.net/index.php?theme=teary&page=authors)
-                            Piotr Wysocki <wysek@linux.bydg.org>
-                            Robert J. Woźny <speedy@ziew.org>
-                            Tomasz Torcz <zdzichu@ekg2.org>
-                            Wojciech Bojdoł <wojboj@htc.net.pl>
-                            Wojtek Kaniewski <wojtekka@irc.pl>
-                            
-The program is released under the terms of the GPL v2 license, whose text can
-be found in /usr/share/common-licenses/GPL-2. Some files may be licensed under
-a different license that is compatible with GPL v2. Such fact is noted at the
-beginning of such file.
+Files: plugins/gtk/iconssets/*
+Copyright: Remko Tronçon
+           2006-2007, Everaldo Coelho
+License: LGPL-2+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Library General Public
+ License as published by the Free Software Foundation; either
+ version 2 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ Library General Public License for more details.
+ .
+ You should have received a copy of the GNU Library General Public
+ License along with this library; if not, write to the Free
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+ .
+ On Debian systems, the complete text of the GNU Library General Public License
+ can be found in /usr/share/common-licenses/LGPL-2 file.
 
-The additional exception to GPL v2 is that it is allowed to compile, link and
-use the program with OpenSSL library by (The OpenSSL Project), available from
-http://www.openssl.org/
+Files: m4/*
+Copyright: 1995-2004, Free Software Foundation, Inc.                                                                                                                         
+License: permissive
+ This Makefile.am is free software; the Free Software Foundation
+ gives unlimited permission to copy, distribute and modify it.
 
-
-NOTE: The above English translation was provided by Marcin Owsiany for the
-convenience of the reader. The original license terms from docs/README, which
-is in Polish, follow:
-
-
-                     Eksperymentalny Klient Gadu-Gadu
-
-          (C) Copyright 2001-2003 Autorzy (pełna lista poniżej)
-
-LICENCJA
-
-    Program jest udostępniony na zasadach licencji GPL v2, której treść
-    załączono w pliku src/COPYING. Niektóre pliki mogą być objęte inną
-    licencją zgodną z GPL v2. Fakt ten jest odnotowany na początku pliku.
-
-    Wyjątkiem od licencji GPL v2 jest możliwość kompilacji, konsolidacji
-    i używania programu z biblioteką OpenSSL autorstwa Projektu OpenSSL
-    (The OpenSSL Project) dostępną pod adresem http://www.openssl.org/
-
-
----------------------------------------------------------------------------------------
-Icon sets
-=========
-
-The PNG files located in plugins/gtk/iconssets were copied from psi-0.12 source
-tree, from iconsets/roster/*.
-  - avail.png, away.png, dnd.png, ffc.png, invisible.png, notavail.png,
-    icon_error.png, icon_unknown.png: from crystal-roster.jisp
-  - gg-avail.png, gg-away.png, gg-invisible.png, gg-notavail.png: from
-    crystal-gadu.jisp
-  - icq-avail.png icq-away.png icq-dnd.png icq-ffc.png icq-invisible.png
-    icq-notavail.png icq-unknown.png icq-xa.png: from crystal-icq.jisp
-
-Copyright and license information:
-
-  The icons in this iconset are copyright by Remko Tronçon, and are made
-  available under the terms of Lesser General Public License.  They are based
-  on the "Crystal project icons", copyright 2006-2007 Everaldo Coelho, under
-  the same license.
-
-The LGPL license can be found in /usr/share/common-licenses/LGPL on Debian
-systems.
-
-
----------------------------------------------------------------------------------------
-M4 files
-========
-
-Many of the files in m4/ directory are:
- Copyright (C) 1995-2004 Free Software Foundation, Inc.
-
-with the following license terms:
-
- This file is free software; the Free Software Foundation
- gives unlimited permission to copy and/or distribute it,
- with or without modifications, as long as this notice is preserved.
-
-m4/gpgme.m4:
- Copyright (C) 2002, 2003, 2004 g10 Code GmbH
-
+Files: m4/gpgme.m4
+Copyright: 2002, 2003, 2004, g10 Code GmbH
+License: permissive
  This file is free software; as a special exception the author gives
  unlimited permission to copy and/or distribute it, with or without
  modifications, as long as this notice is preserved.
-
+ .
  This file is distributed in the hope that it will be useful, but
  WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
----------------------------------------------------------------------------------------
-X-Chat code in gtk plugin
-=========================
+Files: plugins/gtk/*
+Copyright: 1999-2013, 1998-2007 Peter Zelezny
+License: GPL-2+
 
-Some code in:
-  plugins/gtk/userlistgui.c
-  plugins/gtk/xtext.c
-  plugins/gtk/gtkutil.c
-  plugins/gtk/palette.c
-  plugins/gtk/menu.c
-  plugins/gtk/maingui.c
-  plugins/gtk/bindings.c
-is
- Copyright (C) 1998-2007 Peter Zelezny.
-
- This program is free software; you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation; either version 2 of the License, or
- (at your option) any later version.
-
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
-
- You should have received a copy of the GNU General Public License
- along with this program; if not, write to the Free Software
- Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301,
- USA.
-
----------------------------------------------------------------------------------------
-RSA digest code
-===============
-
-plugins/jabber/digest.c and plugins/icq/digest.c contains code
- Copyright (C) 1991-2, RSA Data Security, Inc. Created 1991. All rights reserved.
-
+Files: plugins/jabber/digest.c; plugins/icq/digest.c
+Copyright: 1991-2, RSA Data Security, Inc. Created 1991
+License: permissive
  License to copy and use this software is granted provided that it
  is identified as the "RSA Data Security, Inc. MD5 Message-Digest
  Algorithm" in all material mentioning or referencing this software
  or this function.
-
+ .
  License is also granted to make and use derivative works provided
  that such works are identified as "derived from the RSA Data
  Security, Inc. MD5 Message-Digest Algorithm" in all material
  mentioning or referencing the derived work.
-
+ .
  RSA Data Security, Inc. makes no representations concerning either
  the merchantability of this software or the suitability of this
  software for any particular purpose. It is provided "as is"
  without express or implied warranty of any kind.
-
+ .
  These notices must be retained in any copies of any part of this
  documentation and/or software.
 
-plugins/jabber/digest.c also contains SHA-1 implementation By Steve Reid <steve@edmweb.com>
-released under Public Domain
+Files: plugins/icq/*
+Copyright: 2000-2001, Richard Hughes, Roland Rabien, Tristan Van de Vreede
+	   2001-2002, Jon Keating, Richard Hughes
+           2002-2004, Martin Ăberg, Sam Kothari, Robert Rainwater
+           2004-2008, Joe Kucera
+           2006-2008 Jakub Zawadzki <darkjames@darkjames.ath.cx>
+           2008 Wiesław Ochmiński <wiechu@wiechu.com>
+License: GPL-2+
 
----------------------------------------------------------------------------------------
-Miranda code
-============
-
-Some code in plugins/icq contains code:
- (C) Copyright 2000-2001 Richard Hughes, Roland Rabien, Tristan Van de Vreede
- (C) Copyright 2001-2002 Jon Keating, Richard Hughes
- (C) Copyright 2002-2004 Martin Öberg, Sam Kothari, Robert Rainwater
- (C) Copyright 2004-2008 Joe Kucera
-
----------------------------------------------------------------------------------------
-Network code in the sniffer
-===========================
-
-plugins/sniff/sniff_dns.h contains code from many sources:
-
-
- symbols: digits[], special(), printable(), ns_name_unpack(), ns_name_ntop(), ns_name_uncompress()
+Files: plugins/sniff/sniff_dns.h
+Copyright: Multiple, informations behind                                                  
+License: permissive
+  symbols: digits[], special(), printable(), ns_name_unpack(), ns_name_ntop(), ns_name_uncompress()
 	copied from glibc resolv/res_data.c
-
+ .
  Copyright (c) 1996,1999 by Internet Software Consortium.
-
+ .
  Permission to use, copy, modify, and distribute this software for any
  purpose with or without fee is hereby granted, provided that the above
  copyright notice and this permission notice appear in all copies.
-
+ .
  THE SOFTWARE IS PROVIDED "AS IS" AND INTERNET SOFTWARE CONSORTIUM DISCLAIMS
  ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES
  OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL INTERNET SOFTWARE
@@ -198,14 +123,14 @@ plugins/sniff/sniff_dns.h contains code from many sources:
  PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
  ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
  SOFTWARE.
-
-
+ .
+ .
  symbol: dn_expand() 
 	copied from glibc resolv/res_comp.c 
-
+ .
  Copyright (c) 1985, 1993
     The Regents of the University of California.  All rights reserved.
-
+ .
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions
  are met:
@@ -217,7 +142,7 @@ plugins/sniff/sniff_dns.h contains code from many sources:
  4. Neither the name of the University nor the names of its contributors
     may be used to endorse or promote products derived from this software
     without specific prior written permission.
-
+ .
  THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -229,16 +154,16 @@ plugins/sniff/sniff_dns.h contains code from many sources:
  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
  OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  SUCH DAMAGE.
-
+ .
  Portions Copyright (c) 1993 by Digital Equipment Corporation.
-
+ .
  Permission to use, copy, modify, and distribute this software for any
  purpose with or without fee is hereby granted, provided that the above
  copyright notice and this permission notice appear in all copies, and that
  the name of Digital Equipment Corporation not be used in advertising or
  publicity pertaining to distribution of the document or software without
  specific, written prior permission.
-
+ .
  THE SOFTWARE IS PROVIDED "AS IS" AND DIGITAL EQUIPMENT CORP. DISCLAIMS ALL
  WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES
  OF MERCHANTABILITY AND FITNESS.   IN NO EVENT SHALL DIGITAL EQUIPMENT
@@ -247,13 +172,13 @@ plugins/sniff/sniff_dns.h contains code from many sources:
  PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
  ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
  SOFTWARE.
-
+ .
  Portions Copyright (c) 1996-1999 by Internet Software Consortium.
-
+ .
  Permission to use, copy, modify, and distribute this software for any
  purpose with or without fee is hereby granted, provided that the above
  copyright notice and this permission notice appear in all copies.
-
+ .
  THE SOFTWARE IS PROVIDED "AS IS" AND INTERNET SOFTWARE CONSORTIUM DISCLAIMS
  ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES
  OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL INTERNET SOFTWARE
@@ -262,14 +187,13 @@ plugins/sniff/sniff_dns.h contains code from many sources:
  PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
  ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
  SOFTWARE.
-
-
+ .
  all struct and magic values
 	copied from: glibc resolv/arpa/nameser.h && resolv/arpa/nameser_compat.h
-
+ .
  Copyright (c) 1983, 1989, 1993
     The Regents of the University of California.  All rights reserved.
-
+ .
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions
  are met:
@@ -281,7 +205,7 @@ plugins/sniff/sniff_dns.h contains code from many sources:
  4. Neither the name of the University nor the names of its contributors
     may be used to endorse or promote products derived from this software
     without specific prior written permission.
-
+ .
  THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -293,13 +217,13 @@ plugins/sniff/sniff_dns.h contains code from many sources:
  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
  OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  SUCH DAMAGE.
-
+ .
  Copyright (c) 1996-1999 by Internet Software Consortium.
-
+ .
  Permission to use, copy, modify, and distribute this software for any
  purpose with or without fee is hereby granted, provided that the above
  copyright notice and this permission notice appear in all copies.
-
+ .
  THE SOFTWARE IS PROVIDED "AS IS" AND INTERNET SOFTWARE CONSORTIUM DISCLAIMS
  ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES
  OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL INTERNET SOFTWARE
@@ -309,115 +233,101 @@ plugins/sniff/sniff_dns.h contains code from many sources:
  ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
  SOFTWARE.
 
+Files: plugins/sniff/sniff_gg.h
+Copyright: 2001-2003, Wojtek Kaniewski <wojtekka@irc.pl>
+	       Robert J. Woźny <speedy@ziew.org>
+           Arkadiusz Miśkiewicz <arekm@pld-linux.org>
+           Tomasz Chiliński <chilek@chilan.com>
+           Piotr Wysocki <wysek@linux.bydg.org>
+           Dawid Jarosz <dawjar@poczta.onet.pl>
+License: GPL-2+
 
----------------------------------------------------------------------------------------
-Libgadu code in sniffer
-=======================
+Files: plugins/sniff/sniff_rivchat.h
+Copyright: Arkadiusz Kolacz Inc.                                                                                                       
+License: permissive
+ Sources od structs and magic values copied from 
+ http://akolacz.googlepages.com/RivChat-specyfikacja.PDF
 
-plugins/sniff/sniff_gg.h contains code:
-
- (C) Copyright 2001-2003 Wojtek Kaniewski <wojtekka@irc.pl>
-		    Robert J. WoĹşny <speedy@ziew.org>
-		    Arkadiusz Miśkiewicz <arekm@pld-linux.org>
-		    Tomasz Chiliński <chilek@chilan.com>
-		    Piotr Wysocki <wysek@linux.bydg.org>
-		    Dawid Jarosz <dawjar@poczta.onet.pl>
-
-		& many others look at: http://ekg.chmurka.net/docs/protocol.html
-
- This program is free software; you can redistribute it and/or modify
- it under the terms of the GNU Lesser General Public License Version
- 2.1 as published by the Free Software Foundation.
-
- This program is distributed in the hope that it will be useful,
+Files: compat/getopt.c; compat/getopt.h; compat/getopt1.c
+Copyright: 1987 - 2001, Free Software Foundation, Inc.                                                                                                                            
+License: permissive
+ This file is part of the GNU C Library.
+ .
+ The GNU C Library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ The GNU C Library is distributed in the hope that it will be useful,
  but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU Lesser General Public License for more details.
-
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
  You should have received a copy of the GNU Lesser General Public
- License along with this program; if not, write to the Free Software
- Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301,
- USA.
+ License along with the GNU C Library; if not, write to the Free
+ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
+ MA 02110-1301, USA.
 
-struct data && magic constants copied from libgadu (http://toxygen.net/libgadu) && 
-gg protocol documentation (http://ekg.chmurka.net/docs/protocol.html)
-great job guys! thx.
+Files: config.rpath
+Copyright: 1996-2005, Free Software Foundation, Inc.
+           1996, Gordon Matzigkeit <gord@gnu.ai.mit.edu>
+License: permissive
+ This file is free software; the Free Software Foundation gives
+ unlimited permission to copy and/or distribute it, with or without
+ modifications, as long as this notice is preserved.
 
+License: GPL-2+
+ This program is free software; you can redistribute it
+ and/or modify it under the terms of the GNU General Public
+ License as published by the Free Software Foundation; either
+ version 2 of the License, or (at your option) any later
+ version.
+ .
+ This program is distributed in the hope that it will be
+ useful, but WITHOUT ANY WARRANTY; without even the implied
+ warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ PURPOSE.  See the GNU General Public License for more
+ details.
+ .
+ You should have received a copy of the GNU General Public
+ License along with this package; if not, write to the Free
+ Software Foundation, Inc., 51 Franklin St, Fifth Floor,
+ Boston, MA  02110-1301 USA
+ .
+ On Debian systems, the full text of the GNU General Public
+ License version 2 can be found in the file
+ `/usr/share/common-licenses/GPL-2'.
 
-
----------------------------------------------------------------------------------------
-Rivchat plugin
-==============
-
-plugins/sniff/sniff_rivchat.h:
- structs and magic values copied from http://akolacz.googlepages.com/RivChat-specyfikacja.PDF
- copyright by Arkadiusz Kolacz
-
-
----------------------------------------------------------------------------------------
-GPG plugin
-==========
-
-  Code ported from mcabber 0.9.0 to ekg2
-	Copyright (C) 2006 Jakub Zawadzki <darkjames@darkjames.ath.cx>
-
-  Orginal code:
-	Copyright (C) 2006 Mikael Berthe <bmikael@lists.lilotux.net>
-	Some parts inspired by centericq (impgp.cc)
-
-  This program is free software; you can redistribute it and/or modify
-  it under the terms of the GNU General Public License Version 2 as
-  published by the Free Software Foundation.
-
-  This program is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with this program; if not, write to the Free Software
-  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301,
-  USA.
-
-
----------------------------------------------------------------------------------------
-GNU getopt
-==========
-
-compat/getopt.c is:
-   Copyright (C) 1987,88,89,90,91,92,93,94,95,96,98,99,2000,2001 Free Software Foundation, Inc.
-   This file is part of the GNU C Library.
-
-   The GNU C Library is free software; you can redistribute it and/or
-   modify it under the terms of the GNU Lesser General Public
-   License as published by the Free Software Foundation; either
-   version 2.1 of the License, or (at your option) any later version.
-
-   The GNU C Library is distributed in the hope that it will be useful,
-   but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-   Lesser General Public License for more details.
-
-   You should have received a copy of the GNU Lesser General Public
-   License along with the GNU C Library; if not, write to the Free
-   Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
-   MA 02110-1301, USA.
-
-The following files are under the same license:
-compat/getopt.h:    Copyright (C) 1989-1994, 1996-1999, 2001 Free Software Foundation, Inc.
-compat/getopt1.c:   Copyright (C) 1987,88,89,90,91,92,93,94,96,97,98
-
-
----------------------------------------------------------------------------------------
-config.rpath
-============
-
-   Copyright 1996-2005 Free Software Foundation, Inc.
-   Taken from GNU libtool, 2001
-   Originally by Gordon Matzigkeit <gord@gnu.ai.mit.edu>, 1996
-
-   This file is free software; the Free Software Foundation gives
-   unlimited permission to copy and/or distribute it, with or without
-   modifications, as long as this notice is preserved.
-
-
+License: GPL-2+ with OpenSSL exception
+ This program is free software; you can redistribute it
+ and/or modify it under the terms of the GNU General Public
+ License as published by the Free Software Foundation; either
+ version 2 of the License, or (at your option) any later
+ version.
+ .
+ In addition, as a special exception, the author of this
+ program gives permission to link the code of its
+ release with the OpenSSL project's "OpenSSL" library (or
+ with modified versions of it that use the same license as
+ the "OpenSSL" library), and distribute the linked
+ executables. You must obey the GNU General Public
+ License in all respects for all of the code used other
+ than "OpenSSL".  If you modify this file, you may extend
+ this exception to your version of the file, but you are
+ not obligated to do so.  If you do not wish to do so,
+ delete this exception statement from your version.
+ .
+ This program is distributed in the hope that it will be
+ useful, but WITHOUT ANY WARRANTY; without even the implied
+ warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ PURPOSE.  See the GNU General Public License for more
+ details.
+ .
+ You should have received a copy of the GNU General Public
+ License along with this package; if not, write to the Free
+ Software Foundation, Inc., 51 Franklin St, Fifth Floor,
+ Boston, MA  02110-1301 USA
+ .
+ On Debian systems, the full text of the GNU General Public
+ License version 2 can be found in the file
+ `/usr/share/common-licenses/GPL-2'.
