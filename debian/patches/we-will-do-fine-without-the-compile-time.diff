@@ -1,0 +1,81 @@
+From: Santiago Vila <sanvila@debian.org>
+Subject: Don't use the compile time
+
+--- ekg2-0.4~pre+20120506.1.orig/ekg/commands.c
++++ ekg2-0.4~pre+20120506.1/ekg/commands.c
+@@ -1768,14 +1768,14 @@ static COMMAND(cmd_quit)
+ /**
+  * cmd_version()
+  *
+- * printq() ekg2 VERSION + compile_time() and emit <i>PLUGIN_PRINT_VERSION</i><br>
++ * printq() ekg2 VERSION and emit <i>PLUGIN_PRINT_VERSION</i><br>
+  * Handler for: <i>/version</i> command.
+  *
+  * @return 0
+  */
+ 
+ static COMMAND(cmd_version) {
+-	printq("ekg_version", VERSION, compile_time());
++	printq("ekg_version", VERSION);
+ 	query_emit(NULL, "plugin-print-version");
+ 
+ 	return 0;
+--- ekg2-0.4~pre+20120506.1.orig/ekg/ekg.c
++++ ekg2-0.4~pre+20120506.1/ekg/ekg.c
+@@ -592,7 +592,7 @@ int main(int argc, char **argv)
+ 	}
+ 
+ 	if (print_version) {
+-		g_print("ekg2-%s (compiled on %s)\n", VERSION, compile_time());
++		g_print("ekg2-%s\n", VERSION);
+ 		return 0;
+ 	}
+ 
+--- ekg2-0.4~pre+20120506.1.orig/ekg/stuff.c
++++ ekg2-0.4~pre+20120506.1/ekg/stuff.c
+@@ -632,7 +632,7 @@ void changed_config_timestamp(const char
+  */
+ 
+ const char *compile_time() {
+-	return __DATE__ " " __TIME__;
++	return "We will do fine without the compile time";
+ }
+ 
+ /* NEW CONFERENCE API HERE, WHEN OLD CONFERENCE API BECOME OBSOLETE CHANGE FUNCTION NAME, ETC.... */
+--- ekg2-0.4~pre+20120506.1.orig/plugins/gtk/menu.c
++++ ekg2-0.4~pre+20120506.1/plugins/gtk/menu.c
+@@ -143,10 +143,10 @@ static void menu_about(GtkWidget *wid, g
+ 	gtk_container_add(GTK_CONTAINER(vbox), label);
+ 	snprintf(buf, sizeof(buf), 
+ 		"<span size=\"x-large\"><b>ekg2-%s</b></span>\n\n"
+-			"<b>Compiled on</b>: %s\n\n"
++			"\n"
+ 			"<small>gtk frontend based on xchat: \302\251 1998-2010 Peter \305\275elezn\303\275 &lt;zed@xchat.org></small>\n"
+ 			"<small>iconsets in userlist copied from psi (crystal-gadu.jisp and crystal-roster.jisp and crystal-icq.jisp) (c) Remko Tronçon</small>",
+-			VERSION, compile_time());
++			VERSION);
+ 
+ 	gtk_label_set_markup(GTK_LABEL(label), buf);
+ 	gtk_label_set_justify(GTK_LABEL(label), GTK_JUSTIFY_CENTER);
+--- ekg2-0.4~pre+20120506.1.orig/remote/ekg-remote.c
++++ ekg2-0.4~pre+20120506.1/remote/ekg-remote.c
+@@ -516,7 +516,7 @@ int main(int argc, char **argv)
+ 				return 0;
+ 
+ 			case 'v':
+-				printf("ekg2-%s (compiled on %s)\n", VERSION, compile_time());
++				printf("ekg2-%s\n", VERSION);
+ 				return 0;
+ 
+ 			case '?':
+--- ekg2-0.4~pre+20120506.1.orig/remote/stuff.c
++++ ekg2-0.4~pre+20120506.1/remote/stuff.c
+@@ -103,7 +103,7 @@ EXPORTNOT void binding_free() {
+ }
+ 
+ const char *compile_time() {
+-	return __DATE__ " " __TIME__;
++	return "We will do fine without the compile time";
+ }
+ 
+ void iso_to_ascii(unsigned char *buf) {

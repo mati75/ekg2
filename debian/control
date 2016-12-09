@@ -1,27 +1,27 @@
 Source: ekg2
 Section: net
 Priority: optional
-Maintainer: Mateusz Łukasik <mati75@linuxmint.pl>
-Build-Depends: debhelper (>= 9), dh-autoreconf,
- autoconf, automake (>= 1.14~), libtool, autopoint | gettext (<= 0.17-9), gettext,
+Maintainer: Debian QA Group <packages@qa.debian.org>
+Build-Depends: debhelper (>= 10), dh-python,
+ autoconf, automake (>= 1.14~), libtool, autopoint, gettext,
 # UI
- libncursesw5-dev, libgpmg1-dev [linux-any], libaspell-dev, libgtk2.0-dev,
+ libncursesw5-dev, libgpmg1-dev, libaspell-dev, libgtk2.0-dev,
 # scripting
  python, python-dev, libperl-dev,
 # Protocols
  libgadu-dev, libexpat1-dev,
 # Encryption
- libssl-dev, libgnutls28-dev, libgpgme11-dev,
+ libssl1.0-dev | libssl-dev (<< 1.1.0~), libgnutls28-dev, libgpgme11-dev,
 # Other
  zlib1g-dev, libsqlite3-dev, libglib2.0-dev,
 # Documentation
- xsltproc, docbook-xsl, doxygen
+ xsltproc, docbook-xsl, doxygen, graphviz
 Build-Conflicts: autoconf2.13, automake1.4
-Standards-Version: 3.9.5
-XS-Python-Version: current
+Standards-Version: 3.9.8
+XS-Python-Version: all
 Homepage: http://ekg2.org/
-Vcs-Git: git://github.com/mati75/ekg2.git
-Vcs-Browser: https://github.com/mati75/ekg2
+Vcs-Git: git://github.com/porridge/ekg2.git
+Vcs-Browser: https://github.com/porridge/ekg2
 
 Package: ekg2-core
 Architecture: any
@@ -33,14 +33,13 @@ Description: instant messenger and IRC client for UNIX systems - main program
  has a plugin-based structure, and supports multiple protocols, currently
  Jabber, ICQ, Gadu-Gadu, IRC, RivChat, PolChat, NNTP and RSS.
  .
- This package contains the main program and plugins which do not have
+ This package contains the main program and those plugins which do not have
  large dependencies. It does NOT contain the text or graphical user interface
  plugins.
 
 Package: ekg2
 Architecture: any
 Depends: ekg2-core (= ${binary:Version}), ekg2-ui-ncurses (= ${binary:Version}), ekg2-jabber (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
-Recommends: ekg2-dbg
 Suggests: ekg2-gnupg, ekg2-scripting-python, ekg2-scripting-perl, ekg2-ui-gtk
 Description: instant messenger and IRC client for UNIX systems
  EKG2 is an open source instant messenger program for UNIX systems. The program
@@ -74,18 +73,6 @@ Description: instant messenger and IRC client for UNIX systems - API documentati
  .
  This package contains the API documentation, useful for developers who want to
  create or improve plugins.
-
-Package: ekg2-dbg
-Architecture: any
-Section: debug
-Priority: extra
-Depends: ekg2-core (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
-Description: instant messenger and IRC client for UNIX systems - debugging symbols
- EKG2 is an open source instant messenger program for UNIX systems. The program
- has a plugin-based structure, and supports multiple protocols, currently
- Jabber, ICQ, Gadu-Gadu, IRC, RivChat, PolChat, NNTP and RSS.
- .
- This package contains the debugging symbols for executable code.
 
 Package: ekg2-gnupg
 Architecture: any

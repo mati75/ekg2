@@ -1,2 +1,6 @@
 fix-varargs-handling
 gtestutils-segfault
+gnutls_deprecated.diff
+testsuite_ignore_pc_subdirectory.diff
+we-will-do-fine-without-the-compile-time.diff
+fix-spelling-errors.patch

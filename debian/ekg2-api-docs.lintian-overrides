@@ -1,6 +1,0 @@
-ekg2-api-docs: duplicate-files usr/share/doc/ekg2-api-docs/doxygen/search/all_1a.js usr/share/doc/ekg2-api-docs/doxygen/search/defines_1a.js
-ekg2-api-docs: duplicate-files usr/share/doc/ekg2-api-docs/doxygen/ftv2plastnode.png usr/share/doc/ekg2-api-docs/doxygen/ftv2pnode.png
-ekg2-api-docs: duplicate-files usr/share/doc/ekg2-api-docs/doxygen/ftv2mlastnode.png usr/share/doc/ekg2-api-docs/doxygen/ftv2mnode.png
-ekg2-api-docs: duplicate-files usr/share/doc/ekg2-api-docs/doxygen/ftv2blank.png usr/share/doc/ekg2-api-docs/doxygen/ftv2lastnode.png usr/share/doc/ekg2-api-docs/doxygen/ftv2node.png usr/share/doc/ekg2-api-docs/doxygen/ftv2vertline.png
-ekg2-api-docs: duplicate-files usr/share/doc/ekg2-api-docs/doxygen/ftv2doc.png usr/share/doc/ekg2-api-docs/doxygen/ftv2link.png
-ekg2-api-docs: duplicate-files usr/share/doc/ekg2-api-docs/doxygen/search/all_19.js usr/share/doc/ekg2-api-docs/doxygen/search/defines_19.js

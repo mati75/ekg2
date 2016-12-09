@@ -1,20 +1,68 @@
+ekg2 (1:0.4~pre+20120506.1-13) unstable; urgency=medium
+
+  * QA upload.
+  * Use OpenSSL 1.0.2 instead 1.1.0 to fix FTBFS. (Closes: #828292)
+  * debian/control:
+    - Drop ekg2-dbg package.
+    - Bump dh version to 10.
+    - Bump Standards-Version to 3.9.8.
+    - Change XS-Python-Version to all.
+    - Add dh-python to B-D.
+  * Drop debian/pycompat.
+  * debian/rules:
+    - Enable hardening.
+    - Remove *.la files.
+  * Fix multiple spelling errors.
+  * Fix debian/copyright.
+  * Drop menu files.
+
+ -- Mateusz Łukasik <mati75@linuxmint.pl>  Fri, 09 Dec 2016 21:01:49 +0100
+
+ekg2 (1:0.4~pre+20120506.1-12) unstable; urgency=medium
+
+  * QA upload.
+  * Add graphviz to Build-Depends. Documentation was incomplete, but
+    this package did not FTBFS because of Bug #818379 in doxygen.
+  * Fix debian/copyright encoding. Patch by Jakub Wilk. Closes: #798822.
+
+ -- Santiago Vila <sanvila@debian.org>  Sat, 19 Mar 2016 15:52:04 +0100
+
+ekg2 (1:0.4~pre+20120506.1-11) unstable; urgency=medium
+
+  * QA upload.
+  * Use override_dh_installdocs-arch and override_dh_installdocs-indep
+    so that the "Architecture: all" autobuilder does not FTBFS.
+
+ -- Santiago Vila <sanvila@debian.org>  Tue, 08 Sep 2015 22:25:08 +0200
+
+ekg2 (1:0.4~pre+20120506.1-10) unstable; urgency=medium
+
+  * QA upload.
+  * debian/rules: Drop topgit stuff.
+  * debian/rules: Switch to automake-1.15. Closes: #797230.
+  * debian/control: Drop alternative for autopoint, which is old enough.
+  * Add debian/patches/we-will-do-fine-without-the-compile-time.diff
+    which removes the use of compile_time() function everywhere.
+
+ -- Santiago Vila <sanvila@debian.org>  Mon, 07 Sep 2015 21:34:28 +0200
+
+ekg2 (1:0.4~pre+20120506.1-9) unstable; urgency=low
+
+  * QA upload.
+  * gnutls_deprecated.diff: Stop using deprecated (and removed in 3.4.0)
+    gnutls*set_priority functions. Closes: #624036
+  * testsuite_ignore_pc_subdirectory.diff: Fixup testsuite error by ignoring
+    .pc subdirectory when scanning for gettext input files.
+  * Drop ekg recommends for ekg2-dbg. Closes: #778755
+
+ -- Andreas Metzler <ametzler@debian.org>  Sun, 03 May 2015 14:30:51 +0200
+
 ekg2 (1:0.4~pre+20120506.1-8) unstable; urgency=medium
 
-  * New maintainer. (Closes: #745311)
-  * debian/control:
-    - Update VCS fields.
-    - Bump Standards-Version.
-    - Use libgpmg1-dev on Linux arches.
-  * Fix FTBFS on ppc64el (Closes: #744567, LP: #1251887)
-  * debian/rules:
-    - Remove all .la files. 
-    - Fix FTBFS on kfreebsd-any and hurd-i386.
-  * Update debian/copyright.
-  * Add upstream changelog from git commits.
-  * Add lintian-override for ekg2-core and ekg2-api-docs to ignore duplicate
-    files in different languages.
+  * QA upload.
+  * Upload to unstable.
 
- -- Mateusz Łukasik <mati75@linuxmint.pl>  Mon, 04 Aug 2014 20:53:44 +0200
+ -- Andreas Metzler <ametzler@debian.org>  Tue, 05 Aug 2014 19:17:19 +0200
 
 ekg2 (1:0.4~pre+20120506.1-7) experimental; urgency=medium
 
@@ -28,7 +76,6 @@ ekg2 (1:0.4~pre+20120506.1-7) experimental; urgency=medium
     -6 to testing.
 
  -- Andreas Metzler <ametzler@debian.org>  Sun, 03 Aug 2014 15:36:17 +0200
-
 
 ekg2 (1:0.4~pre+20120506.1-6) unstable; urgency=medium
 

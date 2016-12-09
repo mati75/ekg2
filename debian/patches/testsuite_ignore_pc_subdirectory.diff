@@ -1,0 +1,16 @@
+Description: Fixup testsuite error by ignoring .pc subdirectory when scanning
+ for gettext input files.
+Author: Andreas Metzler <ametzler@debian.org>
+Origin: vendor
+Forwarded: no
+Last-Update: 2015-05-03
+
+--- a/check_potfiles
++++ b/check_potfiles
+@@ -33,5 +33,6 @@ $XGETTEXT --keyword=_ --keyword=N_ --out
+ 	sed -ne '/^#:/{s/#://; s/:[0-9]*/\
+ /g; s/ //g; p;}' | \
+ 	grep -v '^$' | sort | uniq | grep -v '^contrib' | \
++	grep -v '^\.pc/' | \
+ 	diff -u po/POTFILES.in -
+ 

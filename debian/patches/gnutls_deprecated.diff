@@ -1,0 +1,64 @@
+Description: Stop using deprecated (and removed in 3.4.0) gnutls*set_priority
+ functions.
+Author: Andreas Metzler <ametzler@debian.org>
+Origin: vendor
+Bug-Debian: https://bugs.debian.org/624036
+Last-Update: 2015-05-03
+
+--- ekg2-0.4~pre+20120506.1.orig/plugins/jabber/jabber.c
++++ ekg2-0.4~pre+20120506.1/plugins/jabber/jabber.c
+@@ -981,12 +981,6 @@ WATCHER_SESSION(jabber_handle_connect_ss
+ 
+ 	if (type == -1) {
+ 		/* XXX here. old tls code do: j->parser = NULL. check if needed */
+-#ifdef HAVE_LIBGNUTLS
+-		/* Allow connections to servers that have OpenPGP keys as well. */
+-		const int cert_type_priority[3] = {GNUTLS_CRT_X509, GNUTLS_CRT_OPENPGP, 0};
+-		const int comp_type_priority[3] = {GNUTLS_COMP_ZLIB, GNUTLS_COMP_NULL, 0};
+-#endif
+-
+ 		if ((ret = SSL_INIT(j->ssl_session))) {
+ 			/* XXX, OpenSSL error value XXX */
+ 			print("conn_failed_tls");
+@@ -995,10 +989,9 @@ WATCHER_SESSION(jabber_handle_connect_ss
+ 		}
+ 
+ #ifdef HAVE_LIBGNUTLS
+-		gnutls_set_default_priority(j->ssl_session);
+-		gnutls_certificate_type_set_priority(j->ssl_session, cert_type_priority);
++		/* Allow connections to servers that have OpenPGP keys as well. */
++		gnutls_priority_set_direct(j->ssl_session, "NORMAL:+CTYPE-OPENPGP", NULL);
+ 		gnutls_credentials_set(j->ssl_session, GNUTLS_CRD_CERTIFICATE, j->xcred);
+-		gnutls_compression_set_priority(j->ssl_session, comp_type_priority);
+ 
+ 		/* we use read/write instead of recv/send */
+ 		gnutls_transport_set_pull_function(j->ssl_session, (gnutls_pull_func)read);
+--- ekg2-0.4~pre+20120506.1.orig/remote/remote.c
++++ ekg2-0.4~pre+20120506.1/remote/remote.c
+@@ -207,12 +207,6 @@ static int rc_input_new_inet(const char
+ 
+ static int rc_input_new_inet_ssl(const char *path, int type) {
+ #ifdef HAVE_SSL
+-#ifdef REMOTE_WANT_GNUTLS
+-	/* Allow connections to servers that have OpenPGP keys as well. */
+-	const int cert_type_priority[3] = {GNUTLS_CRT_X509, GNUTLS_CRT_OPENPGP, 0};
+-	const int comp_type_priority[3] = {GNUTLS_COMP_ZLIB, GNUTLS_COMP_NULL, 0};
+-
+-#endif
+ 	SSL_SESSION ssl;
+ 	int fd;
+ 	int ret;
+@@ -233,11 +227,9 @@ static int rc_input_new_inet_ssl(const c
+ 	}
+ #ifdef REMOTE_WANT_GNUTLS
+ 	/* gnutls_record_set_max_size(ssl, 1024); */		/* XXX */
+-
+-	gnutls_set_default_priority(ssl);
+-	gnutls_certificate_type_set_priority(ssl, cert_type_priority);
++	/* Allow connections to servers that have OpenPGP keys as well. */
++	gnutls_priority_set_direct(ssl, "NORMAL:+CTYPE-OPENPGP", NULL);
+ 	gnutls_credentials_set(ssl, GNUTLS_CRD_CERTIFICATE, ssl_xcred);
+-	gnutls_compression_set_priority(ssl, comp_type_priority);
+ 
+ 	/* we use read/write instead of recv/send */
+ 	gnutls_transport_set_pull_function(ssl, (gnutls_pull_func) ekg_gnutls_read);

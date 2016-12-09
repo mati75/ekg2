@@ -1,5 +1,0 @@
-?package(ekg2-core):needs="text" \
-  section="Applications/Network/Communication" \
-  title="EKG2" \
-  command="/usr/bin/ekg2" \
-  longtitle="EKG2 - open source instant messenger"

@@ -4,24 +4,18 @@
 
 # As recommended by "current Debian best practice" prescribed by autotools-dev,
 # we specify an explicit automake version
-export AUTOMAKE=automake-1.14
-
-DEB_BUILD_ARCH_OS := $(shell dpkg-architecture -qDEB_BUILD_ARCH_OS)
-DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+export AUTOMAKE=automake-1.15
 
 ARCHLIB := $(shell perl -MConfig -e 'print substr($$Config{vendorarch}, 1)')
 
--include /usr/share/topgit/tg2quilt.mk
-/usr/share/topgit/tg2quilt.mk:
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 %:
-	dh $@ --with autoreconf,python2 --parallel
+	dh $@ --with python2 --parallel
 
 # Remember to update README.Debian as well...
-
-#Configure flags
-
-common_configure_flags := \
+override_dh_auto_configure:
+	dh_auto_configure --verbose -- \
 		--enable-autoresponder \
 		--enable-gg \
 		--enable-gpg \
@@ -46,6 +40,7 @@ common_configure_flags := \
 		--with-expat \
 		--with-gnutls \
 		--with-gpgme \
+		--with-gpm \
 		--with-gtk \
 		--with-libgadu \
 		--with-ncurses \
@@ -55,26 +50,6 @@ common_configure_flags := \
 		--with-sqlite3 \
 		--with-zlib \
 		--libdir=\$${prefix}/lib
-
-ifeq ($(DEB_BUILD_ARCH_OS), linux)
-override_dh_auto_configure:
-		dh_auto_configure --verbose -- \
-			$(common_configure_flags) \
-			--with-gpm
-endif
-ifeq ($(DEB_BUILD_ARCH_OS), kfreebsd)
-override_dh_auto_configure:
-		dh_auto_configure --verbose -- \
-			$(common_configure_flags) \
-			--without-gpm
-endif
-ifeq ($(DEB_BUILD_ARCH_OS), hurd)
-override_dh_auto_configure:
-		dh_auto_configure --verbose -- \
-			$(common_configure_flags) \
-			--without-gpm
-endif
-
 # Reasons for disabling some features are in README.Debian
 # Remember to update README.Debian as well...
 
@@ -95,30 +70,29 @@ override_dh_auto_clean:
 	rm -rf docs/doxygen
 	rm -f docs/ekg2.1
 	rm -f debian/ekg2-scripting-perl.install
-	dh_autoreconf_clean
 	dh_auto_clean
 
 override_dh_strip:
-	dh_strip --dbg-package=ekg2-dbg
+	dh_strip --dbgsym-migration='ekg2-dbg (<< 1:0.4~pre+20120506.1-13~)'
 
 override_dh_auto_install:
 	perl_install_args="DESTDIR=$(CURDIR)/debian/tmp INSTALLDIRS=vendor" $(MAKE) install DESTDIR=$(CURDIR)/debian/tmp
-#	dh_install --list-missing
-	find debian/tmp/usr/lib*/ -name "*.la" -delete
 
 override_dh_install:
 	sed -e 's,@ARCHLIB@,$(ARCHLIB),g' $(CURDIR)/debian/ekg2-scripting-perl.install.in > $(CURDIR)/debian/ekg2-scripting-perl.install
+	find debian/tmp/usr/lib*/ -name "*.la" -delete
 	dh_install
 
-override_dh_installchangelogs:
-	dh_installchangelogs -k debian/Changelog.upstream
-
-override_dh_installdocs:
-	dh_installdocs --link-doc=ekg2-core -pekg2 -pekg2-dbg -pekg2-gnupg -pekg2-jabber \
+override_dh_installdocs-arch:
+	dh_installdocs --link-doc=ekg2-core -pekg2 -pekg2-gnupg -pekg2-jabber \
 	  -pekg2-scripting-python -pekg2-scripting-perl
-	dh_installdocs --remaining-packages
+	dh_installdocs --remaining-packages -X.md5
 	cp -a docs/ekg2book/book    $(CURDIR)/debian/ekg2-core/usr/share/doc/ekg2-core/book-pl
 	cp -a docs/ekg2book-en/book $(CURDIR)/debian/ekg2-core/usr/share/doc/ekg2-core/book-en
+
+override_dh_installdocs-indep:
+	dh_installdocs
 ifneq (,$(findstring ekg2-api-docs, $(shell dh_listpackages)))
 	cp -a docs/doxygen          $(CURDIR)/debian/ekg2-api-docs/usr/share/doc/ekg2-api-docs/
 endif
+	find  $(CURDIR)/debian/ekg2-api-docs/usr/share/doc/ekg2-api-docs/ -name "*.md5" -delete

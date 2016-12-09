@@ -18,7 +18,7 @@ all things being equal, at least one of the following applies:
 
  - uninstalling it lets user decrease the footprint by more than 1MB, on a base
    system. This might seem small but keep in mind that in a certain
-   distribution of packages, when the rule is applied consistenly, bumping this
+   distribution of packages, when the rule is applied consistently, bumping this
    threshold by a couple of MB would inflate the core package footprint by a
    dozen or so megabytes.
 

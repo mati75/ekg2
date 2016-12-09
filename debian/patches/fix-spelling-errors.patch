@@ -1,0 +1,290 @@
+Description: Fix spelling errors
+Author: Mateusz Łukasik <mati75@linuxmint.pl>
+Last-Update: 2016-12-07
+
+--- a/contrib/ekg_hash_benchmark.inc
++++ b/contrib/ekg_hash_benchmark.inc
+@@ -99,17 +99,17 @@
+ 	format_add("ignored_modified", _("%> Modified ignore level of %T%1%n\n"), 1);
+ 	format_add("ignored_deleted", _("%) Unignored %1\n"), 1);
+ 	format_add("ignored_deleted_all", _("%) Ignore list cleared up\n"), 1);
+-	format_add("ignored_exist", _("%! %1 already beeing ignored\n"), 1);
++	format_add("ignored_exist", _("%! %1 already being ignored\n"), 1);
+ 	format_add("ignored_list", "%> %1 %2\n", 1);
+ 	format_add("ignored_list_empty", _("%! Ignore list ist empty\n"), 1);
+-	format_add("error_not_ignored", _("%! %1 is not beeing ignored\n"), 1);
++	format_add("error_not_ignored", _("%! %1 is not being ignored\n"), 1);
+ 	format_add("blocked_added", _("%> Blocking %T%1%n\n"), 1);
+ 	format_add("blocked_deleted", _("%) Unblocking %1\n"), 1);
+ 	format_add("blocked_deleted_all", _("%) Block list cleared up\n"), 1);
+-	format_add("blocked_exist", _("%! %1 already beeing blocked\n"), 1);
++	format_add("blocked_exist", _("%! %1 already being blocked\n"), 1);
+ 	format_add("blocked_list", "%> %1\n", 1);
+ 	format_add("blocked_list_empty", _("%! Block list is empty\n"), 1);
+-	format_add("error_not_blocked", _("%! %1 is not beeing blocked\n"), 1);
++	format_add("error_not_blocked", _("%! %1 is not being blocked\n"), 1);
+ 	format_add("list_empty", _("%! Roster is empty\n"), 1);
+ 	format_add("list_avail", _("%> %1 %Y(available)%n %b%3:%4%n\n"), 1);
+ 	format_add("list_avail_descr", _("%> %1 %Y(available: %n%5%Y)%n %b%3:%4%n\n"), 1);
+@@ -483,7 +483,7 @@
+ 	format_add("dcc_create_error", _("%! Can't turn on direct connections: %1\n"), 1);
+ 	format_add("dcc_error_network", _("%! Error transmitting with %1\n"), 1);
+ 	format_add("dcc_error_refused", _("%! Connection to %1 refused\n"), 1);
+-	format_add("dcc_error_unknown", _("%! Uknown direct connection error\n"), 1);
++	format_add("dcc_error_unknown", _("%! Unknown direct connection error\n"), 1);
+ 	format_add("dcc_error_handshake", _("%! Can't connect with %1\n"), 1);
+ 	format_add("dcc_user_aint_dcc", _("%! %1 doesn't have direct connections enabled\n"), 1);
+ 	format_add("dcc_timeout", _("%! Direct connection to %1 timed out\n"), 1);
+@@ -503,7 +503,7 @@
+ 	format_add("dcc_done_send", _("%> Finished sending file %T%2%n to %1\n"), 1);
+ 	format_add("dcc_close", _("%) Connection with %1 closed\n"), 1);
+ 	format_add("dcc_voice_offer", _("%) %1 wants to chat\n%) Use  %Tdcc voice #%2%n to start chat or %Tdcc close #%2%n to refuse\n"), 1);
+-	format_add("dcc_voice_running", _("%! Only one simultanous voice chat possible\n"), 1);
++	format_add("dcc_voice_running", _("%! Only one simultaneous voice chat possible\n"), 1);
+ 	format_add("dcc_voice_unsupported", _("%! Voice chat not compiled in. See %Tdocs/voip.txt%n\n"), 1);
+ 	format_add("dcc_get_offer", _("%) %1 sends %T%2%n (size %T%3b%n)\n%) Use %Tdcc get #%4%n to receive or %Tdcc close #%4%n to refuse\n"), 1);
+ 	format_add("dcc_get_offer_resume", _("%) File exist, you can resume with %Tdcc resume #%4%n\n"), 1);
+@@ -687,7 +687,7 @@
+ 	format_add("plugin_unloaded", _("%> Plugin %T%1%n unloaded%n\n"), 1);
+ 	format_add("plugin_list", _("%> %T%1%n - %2%n\n"), 1);
+ 	format_add("plugin_prio_set", _("%> Plugin %T%1%n prio has been changed to %T%2%n\n"), 1);
+-	format_add("plugin_default", _("%> Plugins prio setted to default\n"), 1);
++	format_add("plugin_default", _("%> Plugins prio set to default\n"), 1);
+ 	format_add("script_autorun_succ",	_("%> Script %W%1%n successful %G%2%n autorun dir"), 1);		/* XXX sciezka by sie przydala */
+ 	format_add("script_autorun_fail", 	_("%! Script %W%1%n failed %R%2%n autorun dir %r(%3)"), 1);
+ 	format_add("script_autorun_unkn", 	_("%! Error adding/removing script %W%1%n from autorundir %r(%3)"), 1);
+@@ -764,16 +764,16 @@
+ 	format_add("gg_version", _("%> %TGadu-Gadu%n: libgadu %g%1%n (headers %c%2%n), protocol %g%3%n (%c0x%4%n)"), 1);
+ 	format_add("gpg_key_unset",	_("%) GPGKEY for uid: %W%1%n UNSET!"), 1);
+ 	format_add("gpg_key_not_found", _("%> GPGKEY for uid: %W%1%n NOT FOUND!"), 1);
+-	format_add("gpg_key_set_new",	_("%) You've set up new key for uid: %W%1%n keyid: %W%2%n\n%) Encryption will be disabled until you force key (gpg:key --forcekey) NOT RECOMENDED or we verify key (signed presence is enough)"), 1);
++	format_add("gpg_key_set_new",	_("%) You've set up new key for uid: %W%1%n keyid: %W%2%n\n%) Encryption will be disabled until you force key (gpg:key --forcekey) NOT RECOMMENDED or we verify key (signed presence is enough)"), 1);
+ 	format_add("gpg_key_set_newf",	_("%) You've forced setting new key for uid: %W%1%n keyid: %W%2%n\n%! Forcing key is not good idea... Please rather use /gpg:key --setkey coz key will be verified before encryption..."), 1);
+ 	format_add("gpg_key_set_ok",		_("%> Keys you've set up for uid: %W%1%n match with our internal DB. Happy encrypted talk. F**k echelon"), 1);
+-	format_add("gpg_key_set_okf",		_("%> Keys you've set up for uid: %W%1%n match with our internal DB. Happy encrypted talk. F**k echelon (Forcing key is not nessesary here!)"), 1);
++	format_add("gpg_key_set_okf",		_("%> Keys you've set up for uid: %W%1%n match with our internal DB. Happy encrypted talk. F**k echelon (Forcing key is not necessary here!)"), 1);
+ 	format_add("gpg_key_set_okbutver",	_("%! Keys matched, but lasttime we fail to verify key. Encryption won't work until forced."), 1);
+ 	format_add("gpg_key_set_okfbutver",	_("%! Keys matched, but lasttime we fail to verify key. Encryption forced."), 1);
+ 	format_add("gpg_key_set_okbutmish",	_("%! Keys mishmash. Encryption won't work until forced or user change his keyid."), 1);
+ 	format_add("gpg_key_set_okfbutmish",	_("%! Keys mishmash. Encryption forced."), 1);
+-	format_add("gpg_key_set_okbutunk",	_("%! We didn't verify this key, if you're sure it's ok force key (gpg:key --forcekey) however it's NOT RECOMENDED.. or wait until we verify key"), 1);
+-	format_add("gpg_key_set_okfbutunk",	_("%! We didn't verify this key, You've forced encryption. NOT RECOMENDED."), 1);
++	format_add("gpg_key_set_okbutunk",	_("%! We didn't verify this key, if you're sure it's ok force key (gpg:key --forcekey) however it's NOT RECOMMENDED.. or wait until we verify key"), 1);
++	format_add("gpg_key_set_okfbutunk",	_("%! We didn't verify this key, You've forced encryption. NOT RECOMMENDED."), 1);
+ 	format_add("gpg_keys_list",		"%> %W%1%n/%W%2%n %3", 1);		/* uid, keyid, key status */
+ 	format_add("user_info_gpg_key", 	_("%K| %nGPGKEY: %T%1%n (%2)%n"), 1);	/* keyid, key status */
+ 	format_add("irc_msg_sent",	"%P<%n%3/%5%P>%n %6", 1);
+@@ -1013,7 +1013,7 @@
+ 	format_add("jogger_warning_miniblog_techblog", _("%> %|* Miniblog entry will be posted to Techblog at: %c%1%n"), 1);
+ 	format_add("jogger_warning_techblog_only", _("%> * Entries posted to Techblog should have also some normal category: %c%1%n"), 1);
+ 	format_add("jogger_warning_malformed_url", _("%> %|* Malformed URL found at: %c%1%n"), 1);
+-	format_add("jogger_warning_spacesep", _("%> %|* Possibility of accidentially using space as a separator instead of commas: %c%1%n"), 1);
++	format_add("jogger_warning_spacesep", _("%> %|* Possibility of accidentally using space as a separator instead of commas: %c%1%n"), 1);
+ 	format_add("jogger_warning_wrong_value", _("%> %|* Incorrect value found at: %c%1%n"), 1);
+ 	format_add("jogger_warning_wrong_value_level", _("%> %|* Wrong %Tlevel%n found (level %Tnumber%n should be used), entry would be published on %Tzeroth%n level (not default) at: %c%1%n"), 1);
+ 	format_add("jogger_warning_wrong_value_spaces", _("%> %|* Incorrent value found (try to remove leading&trailing spaces) at: %c%1%n"), 1);
+--- a/docs/ekg2book-en/develbook.xml
++++ b/docs/ekg2book-en/develbook.xml
+@@ -16,7 +16,7 @@
+ 		  If you are fixing/adding something, keep style from rest of 
+ 		  the code. Make indentations by tab characters, not space.
+ 		  Make spaces after commas or semicolons. If you have other 
+-		  style, but your patches will be good and/or nessesary 
++		  style, but your patches will be good and/or necessary 
+ 		  don't be suprise if Your code will be changed.
+                </para>
+             </listitem>
+--- a/ekg/configfile.c
++++ b/ekg/configfile.c
+@@ -96,7 +96,7 @@ void config_postread()
+ 		session_t *s = session_find(config_session_default);
+ 
+ 		if (s) {
+-			debug("setted default session to %s\n", s->uid);
++			debug("set default session to %s\n", s->uid);
+ 			window_session_set(window_status, s);
+ 		} else {
+ 			debug_warn("default session not found\n");
+--- a/ekg/themes.c
++++ b/ekg/themes.c
+@@ -1573,17 +1573,17 @@ void theme_init()
+ 	format_add("ignored_modified", _("%> Modified ignore level of %T%1%n\n"), 1);
+ 	format_add("ignored_deleted", _("%) Unignored %1\n"), 1);
+ 	format_add("ignored_deleted_all", _("%) Ignore list cleared up\n"), 1);
+-	format_add("ignored_exist", _("%! %1 already beeing ignored\n"), 1);
++	format_add("ignored_exist", _("%! %1 already being ignored\n"), 1);
+ 	format_add("ignored_list", "%> %1 %2\n", 1);
+ 	format_add("ignored_list_empty", _("%! Ignore list ist empty\n"), 1);
+-	format_add("error_not_ignored", _("%! %1 is not beeing ignored\n"), 1);
++	format_add("error_not_ignored", _("%! %1 is not being ignored\n"), 1);
+ 	format_add("blocked_added", _("%> Blocking %T%1%n\n"), 1);
+ 	format_add("blocked_deleted", _("%) Unblocking %1\n"), 1);
+ 	format_add("blocked_deleted_all", _("%) Block list cleared up\n"), 1);
+-	format_add("blocked_exist", _("%! %1 already beeing blocked\n"), 1);
++	format_add("blocked_exist", _("%! %1 already being blocked\n"), 1);
+ 	format_add("blocked_list", "%> %1\n", 1);
+ 	format_add("blocked_list_empty", _("%! Block list is empty\n"), 1);
+-	format_add("error_not_blocked", _("%! %1 is not beeing blocked\n"), 1);
++	format_add("error_not_blocked", _("%! %1 is not being blocked\n"), 1);
+ 
+ 	/* contact list */
+ 	format_add("list_empty", _("%! Roster is empty\n"), 1);
+@@ -1945,7 +1945,7 @@ void theme_init()
+ 	format_add("dcc_create_error", _("%! Can't turn on direct connections: %1\n"), 1);
+ 	format_add("dcc_error_network", _("%! Error transmitting with %1\n"), 1);
+ 	format_add("dcc_error_refused", _("%! Connection to %1 refused\n"), 1);
+-	format_add("dcc_error_unknown", _("%! Uknown direct connection error\n"), 1);
++	format_add("dcc_error_unknown", _("%! Unknown direct connection error\n"), 1);
+ 	format_add("dcc_error_handshake", _("%! Can't connect with %1\n"), 1);
+ 	format_add("dcc_user_aint_dcc", _("%! %1 doesn't have direct connections enabled\n"), 1);
+ 	format_add("dcc_timeout", _("%! Direct connection to %1 timed out\n"), 1);
+@@ -1967,7 +1967,7 @@ void theme_init()
+ 	format_add("dcc_close", _("%) Connection with %1 closed\n"), 1);
+ 
+ 	format_add("dcc_voice_offer", _("%) %1 wants to chat\n%) Use  %Tdcc voice #%2%n to start chat or %Tdcc close #%2%n to refuse\n"), 1);
+-	format_add("dcc_voice_running", _("%! Only one simultanous voice chat possible\n"), 1);
++	format_add("dcc_voice_running", _("%! Only one simultaneous voice chat possible\n"), 1);
+ 	format_add("dcc_voice_unsupported", _("%! Voice chat not compiled in. See %Tdocs/voip.txt%n\n"), 1);
+ 	format_add("dcc_get_offer", _("%) %1 sends %T%2%n (size %T%3b%n)\n%) Use %Tdcc get #%4%n to receive or %Tdcc close #%4%n to refuse\n"), 1);
+ 	format_add("dcc_get_offer_resume", _("%) File exist, you can resume with %Tdcc resume #%4%n\n"), 1);
+@@ -2187,7 +2187,7 @@ void theme_init()
+ 	format_add("plugin_unloaded", _("%> Plugin %T%1%n unloaded%n\n"), 1);
+ 	format_add("plugin_list", _("%> %T%1%n - %2%n\n"), 1);
+ 	format_add("plugin_prio_set", _("%> Plugin %T%1%n prio has been changed to %T%2%n\n"), 1);
+-	format_add("plugin_default", _("%> Plugins prio setted to default\n"), 1);
++	format_add("plugin_default", _("%> Plugins prio set to default\n"), 1);
+ 
+ 	format_add("script_autorun_succ",	_("%> Script %W%1%n successful %G%2%n autorun dir"), 1);		/* XXX sciezka by sie przydala */
+ 	format_add("script_autorun_fail",	_("%! Script %W%1%n failed %R%2%n autorun dir %r(%3)"), 1);
+--- a/plugins/gg/gg.c
++++ b/plugins/gg/gg.c
+@@ -1417,7 +1417,7 @@ WATCHER_SESSION(gg_session_handler) {		/
+ 		if ((watch == g->sess->check) && g->sess->fd == fd) { 
+ 			if ((w = watch_find(&gg_plugin, fd, watch))) 
+ 				watch_timeout_set(w, g->sess->timeout);
+-			else debug("[gg] watches managment went to hell?\n");
++			else debug("[gg] watches management went to hell?\n");
+ 			gg_event_free(e);
+ 			return 0;
+ 		} 
+--- a/plugins/gg/pubdir.c
++++ b/plugins/gg/pubdir.c
+@@ -68,7 +68,7 @@ static WATCHER(gg_handle_register)	/* ty
+ 		if (watch == h->check && h->fd == fd) { 
+ 			if ((w = watch_find(&gg_plugin, fd, watch))) 
+ 				watch_timeout_set(w, h->timeout);
+-			else debug("[gg] watches managment went to hell?\n");
++			else debug("[gg] watches management went to hell?\n");
+ 			return 0;
+ 		}
+ 
+--- a/plugins/gpg/gpg.c
++++ b/plugins/gpg/gpg.c
+@@ -589,17 +589,17 @@ static int gpg_theme_init() {
+ 	format_add("gpg_key_unset",	_("%) GPGKEY for uid: %W%1%n UNSET!"), 1);
+ 	format_add("gpg_key_not_found", _("%> GPGKEY for uid: %W%1%n NOT FOUND!"), 1);
+ 
+-	format_add("gpg_key_set_new",	_("%) You've set up new key for uid: %W%1%n keyid: %W%2%n\n%) Encryption will be disabled until you force key (gpg:key --forcekey) NOT RECOMENDED or we verify key (signed presence is enough)"), 1);
++	format_add("gpg_key_set_new",	_("%) You've set up new key for uid: %W%1%n keyid: %W%2%n\n%) Encryption will be disabled until you force key (gpg:key --forcekey) NOT RECOMMENDED or we verify key (signed presence is enough)"), 1);
+ 	format_add("gpg_key_set_newf",	_("%) You've forced setting new key for uid: %W%1%n keyid: %W%2%n\n%! Forcing key is not good idea... Please rather use /gpg:key --setkey coz key will be verified before encryption..."), 1);
+ 
+ 	format_add("gpg_key_set_ok",		_("%> Keys you've set up for uid: %W%1%n match with our internal DB. Happy encrypted talk. F**k echelon"), 1);
+-	format_add("gpg_key_set_okf",		_("%> Keys you've set up for uid: %W%1%n match with our internal DB. Happy encrypted talk. F**k echelon (Forcing key is not nessesary here!)"), 1);
++	format_add("gpg_key_set_okf",		_("%> Keys you've set up for uid: %W%1%n match with our internal DB. Happy encrypted talk. F**k echelon (Forcing key is not necessary here!)"), 1);
+ 	format_add("gpg_key_set_okbutver",	_("%! Keys matched, but lasttime we fail to verify key. Encryption won't work until forced."), 1);
+ 	format_add("gpg_key_set_okfbutver",	_("%! Keys matched, but lasttime we fail to verify key. Encryption forced."), 1);
+ 	format_add("gpg_key_set_okbutmish",	_("%! Keys mishmash. Encryption won't work until forced or user change his keyid."), 1);
+ 	format_add("gpg_key_set_okfbutmish",	_("%! Keys mishmash. Encryption forced."), 1);
+-	format_add("gpg_key_set_okbutunk",	_("%! We didn't verify this key, if you're sure it's ok force key (gpg:key --forcekey) however it's NOT RECOMENDED.. or wait until we verify key"), 1);
+-	format_add("gpg_key_set_okfbutunk",	_("%! We didn't verify this key, You've forced encryption. NOT RECOMENDED."), 1);
++	format_add("gpg_key_set_okbutunk",	_("%! We didn't verify this key, if you're sure it's ok force key (gpg:key --forcekey) however it's NOT RECOMMENDED.. or wait until we verify key"), 1);
++	format_add("gpg_key_set_okfbutunk",	_("%! We didn't verify this key, You've forced encryption. NOT RECOMMENDED."), 1);
+ 
+ 	format_add("gpg_keys_list",		"%> %W%1%n/%W%2%n %3", 1);		/* uid, keyid, key status */
+ 
+--- a/plugins/icq/icq_snac_handlers_04message.c
++++ b/plugins/icq/icq_snac_handlers_04message.c
+@@ -443,7 +443,7 @@ static int icq_snac_message_recv_icbm_ch
+ 			icq_hexdump(DEBUG_ERROR, t5->buf, t5->len);
+ 			break;
+ 		default:
+-			debug_error("icq_snac_message_recv_icbm_ch2() Unknow 0x2711 message for capability id=%d\n", icq_cap_id(pkt.cap));
++			debug_error("icq_snac_message_recv_icbm_ch2() Unknown 0x2711 message for capability id=%d\n", icq_cap_id(pkt.cap));
+ 			icq_hexdump(DEBUG_ERROR, t5->buf, t5->len);
+ 			break;
+ 	}
+@@ -567,7 +567,7 @@ SNAC_SUBHANDLER(icq_snac_message_respons
+ 		guint16 version;				/* this can be v8 greeting message reply */
+ 		/* 27b unknowns from the msg we sent */
+ 		guint16 cookie;				/* Message sequence (cookie) */
+-		/* 12b Unknown */
++		/* 12b Unknownn */
+ 		guint8 msg_type;				/* Message type: MTYPE_AUTOAWAY, MTYPE_AUTOBUSY, etc. */
+ 		guint8 flags;					/* Message flags: MFLAG_NORMAL, MFLAG_AUTO, etc. */
+ 		guint16 status;				/* Status */
+@@ -614,7 +614,7 @@ SNAC_SUBHANDLER(icq_snac_message_respons
+ 		xfree(reason);
+ 	} else {
+ 		/* XXX */
+-		debug_error("icq_snac_message_response() Sorry, we dont't handle it yet\n");
++		debug_error("icq_snac_message_response() Sorry, we don't handle it yet\n");
+ 		icq_hexdump(DEBUG_ERROR, buf, len);
+ 	}
+ 
+--- a/plugins/icq/icq_snac_handlers_13userlist.c
++++ b/plugins/icq/icq_snac_handlers_13userlist.c
+@@ -372,8 +372,8 @@ static char *icq_snac_userlist_edit_ack_
+ 	switch (error) {
+ 		case 0x0000: msg = "OK!"; break;
+ 		case 0x0002: msg = "Item you want to modify not found in list"; break;
+-		case 0x0003: msg = "Item you want to add allready exists"; break;
+-		case 0x000A: msg = "Error adding item (invalid id, allready in list, invalid data)"; break;
++		case 0x0003: msg = "Item you want to add already exists"; break;
++		case 0x000A: msg = "Error adding item (invalid id, already in list, invalid data)"; break;
+ 		case 0x000C: msg = "Can't add item. Limit for this type of items exceeded"; break;
+ 		case 0x000D: msg = "Trying to add ICQ contact to an AIM list"; break;
+ 		case 0x000E: msg = "Can't add this contact because it requires authorization";	break;
+--- a/plugins/irc/misc.c
++++ b/plugins/irc/misc.c
+@@ -237,7 +237,7 @@ next2:
+ 		}
+ 
+ 		/* tutaj ladnie by wygladalo jakbysmy wywolali protocol-status.. ale jednak to jest b. kiepski pomysl */
+-		debug_error("USER: 0x%x PERMISION GRANTED ON CHAN: 0x%x\n", u, chan);
++		debug_error("USER: 0x%x PERMISSION GRANTED ON CHAN: 0x%x\n", u, chan);
+ 		continue;
+ 
+ next:
+--- a/plugins/irc/people.c
++++ b/plugins/irc/people.c
+@@ -651,7 +651,7 @@ int irc_free_people(session_t *s, irc_pr
+ 		list_destroy(chan->onchan, 0);
+ 		chan->onchan = NULL;
+ 
+-		/* GiM: check if window isn't allready destroyed */
++		/* GiM: check if window isn't already destroyed */
+ 		w = window_find_s(s, chan->name);
+ 		if (w && w->userlist)
+ 			userlists_destroy(&(w->userlist));
+--- a/plugins/jogger/jogger.c
++++ b/plugins/jogger/jogger.c
+@@ -226,7 +226,7 @@ static int jogger_theme_init(void) {
+ 	format_add("jogger_warning_miniblog_techblog", _("%> %|* Miniblog entry will be posted to Techblog at: %c%1%n"), 1);
+ 	format_add("jogger_warning_techblog_only", _("%> * Entries posted to Techblog should have also some normal category: %c%1%n"), 1);
+ 	format_add("jogger_warning_malformed_url", _("%> %|* Malformed URL found at: %c%1%n"), 1);
+-	format_add("jogger_warning_spacesep", _("%> %|* Possibility of accidentially using space as a separator instead of commas: %c%1%n"), 1);
++	format_add("jogger_warning_spacesep", _("%> %|* Possibility of accidentally using space as a separator instead of commas: %c%1%n"), 1);
+ 	format_add("jogger_warning_wrong_value", _("%> %|* Incorrect value found at: %c%1%n"), 1);
+ 	format_add("jogger_warning_wrong_value_level", _("%> %|* Wrong %Tlevel%n found (level %Tnumber%n should be used), entry would be published on %Tzeroth%n level (not default) at: %c%1%n"), 1);
+ 	format_add("jogger_warning_wrong_value_spaces", _("%> %|* Incorrent value found (try to remove leading&trailing spaces) at: %c%1%n"), 1);
+--- a/plugins/ncurses/nc-stuff.h
++++ b/plugins/ncurses/nc-stuff.h
+@@ -33,7 +33,7 @@ struct screen_line { /* everything local
+ 	fstr_attr_t *ts_attr;	/* attributes of the timestamp */
+ 
+ 	int backlog;		/* backlog line it comes from */
+-	int margin_left;	/* where the margin should be setted */	
++	int margin_left;	/* where the margin should be set */
+ };
+ 
+ enum window_frame_t {
