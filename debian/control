@@ -11,13 +11,13 @@ Build-Depends: debhelper (>= 10), dh-python,
 # Protocols
  libgadu-dev, libexpat1-dev,
 # Encryption
- libssl1.0-dev | libssl-dev (<< 1.1.0~), libgnutls28-dev, libgpgme11-dev,
+ libssl-dev, libgnutls28-dev, libgpgme11-dev,
 # Other
  zlib1g-dev, libsqlite3-dev, libglib2.0-dev,
 # Documentation
  xsltproc, docbook-xsl, doxygen, graphviz
 Build-Conflicts: autoconf2.13, automake1.4
-Standards-Version: 3.9.8
+Standards-Version: 4.1.1
 XS-Python-Version: all
 Homepage: http://ekg2.org/
 Vcs-Git: git://github.com/porridge/ekg2.git
@@ -27,7 +27,6 @@ Package: ekg2-core
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Recommends: ekg2
-Suggests: sms-pl
 Description: instant messenger and IRC client for UNIX systems - main program
  EKG2 is an open source instant messenger program for UNIX systems. The program
  has a plugin-based structure, and supports multiple protocols, currently
@@ -99,6 +98,7 @@ Description: instant messenger and IRC client for UNIX systems - Jabber/XMPP
 Package: ekg2-scripting-python
 Architecture: any
 Depends: ekg2-core (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}
+Suggests: ekg2-api-docs
 XB-Python-Version: ${python:Versions}
 Description: instant messenger and IRC client for UNIX systems - Python scripting
  EKG2 is an open source instant messenger program for UNIX systems. The program
@@ -110,6 +110,7 @@ Description: instant messenger and IRC client for UNIX systems - Python scriptin
 
 Package: ekg2-scripting-perl
 Architecture: any
+Suggests: ekg2-api-docs
 Depends: ekg2-core (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}, ${perl:Depends}
 Description: instant messenger and IRC client for UNIX systems - Perl scripting
  EKG2 is an open source instant messenger program for UNIX systems. The program

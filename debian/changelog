@@ -1,3 +1,17 @@
+ekg2 (1:0.4~pre+20120506.1-14) unstable; urgency=medium
+
+  * QA upload.
+  * Add patch taken from Mageia to fix FTBFS with OpenSSL 1.1.0.
+    (Closes: #851081)
+  * debian/control:
+    - ekg2-scripting-*: Add dependency "Suggests: ekg2-api-docs"
+     (Closes: #849599)
+    - ekg2: remove Suggests: sms-pl - it has been removed from
+    repository 7 years ago.
+    - Bump Standards-Version to 4.1.1.
+
+ -- Mateusz Łukasik <mati75@linuxmint.pl>  Thu, 30 Nov 2017 12:42:48 +0100
+
 ekg2 (1:0.4~pre+20120506.1-13) unstable; urgency=medium
 
   * QA upload.

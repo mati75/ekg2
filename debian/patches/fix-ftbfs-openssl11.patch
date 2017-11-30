@@ -1,0 +1,30 @@
+Description: Fix FTBFS with openssl 1.1
+Author: cjw <cjw>
+Debian-Bug: https://bugs.debian.org/851081
+
+--- a/plugins/sim/simlite.c	2011-03-17 18:08:11.000000000 +0100
++++ b/plugins/sim/simlite.c	2017-10-16 00:58:12.149614011 +0200
+@@ -187,7 +187,7 @@
+ 	RSA *key = sim_key_read(uid, NULL);
+ 	unsigned char md_value[EVP_MAX_MD_SIZE], *buf, *newbuf;
+ 	char *result = NULL;
+-	EVP_MD_CTX ctx;
++	EVP_MD_CTX * ctx;
+ 	unsigned int md_len;
+ 	int size, i;
+ 
+@@ -211,9 +211,11 @@
+ 	else
+ 		size = i2d_RSAPrivateKey(key, &newbuf);
+ 	
+-	EVP_DigestInit(&ctx, EVP_sha1());	
+-	EVP_DigestUpdate(&ctx, buf, size);
+-	EVP_DigestFinal(&ctx, md_value, &md_len);
++	ctx = EVP_MD_CTX_new();
++	EVP_DigestInit(ctx, EVP_sha1());	
++	EVP_DigestUpdate(ctx, buf, size);
++	EVP_DigestFinal(ctx, md_value, &md_len);
++	EVP_MD_CTX_free(ctx);
+ 
+ 	free(buf);
+ 
